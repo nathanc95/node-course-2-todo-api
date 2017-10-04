@@ -8,7 +8,7 @@ beforeEach((done)=>{
   Todo.remove({}).then(()=>done());
 });
 
-describe('POST/tods',()=>{
+describe('POST/todos',()=>{
   it('should create a new todo',(done)=>{
     var text = 'Test todo text ';
 
