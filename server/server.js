@@ -5,14 +5,7 @@ var{mongoose}=require('./db/mongoose');
 var {Todo}=require('./models/todo');
 var {Users}=require('./models/user');
 var app=express();
-
-const todos=[{
-  _id:new ObjectID(),
-  text:'first test todo'
-},{
-  _id:new ObjectID(),
-  text:'second test todo'
-}];
+const port=process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.post('/todos',(req,res)=>{
   var todo=new Todo({
@@ -46,6 +39,6 @@ app.get('/todos/:id',(req,res)=>{
   });
 });
 app.listen(3000,()=>{
-  console.log('Started on port 3000');
+  console.log(`Started up at port ${port}`);
 });
 module.exports={app};
